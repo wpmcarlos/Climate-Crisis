@@ -1,0 +1,18 @@
+h1 {
+  font-family: "Amatic SC", cursive;
+  font-size: 60px;
+  font-weight: 700;
+  text-align: center;
+
+  background-image: url(h1-background.png);
+  background-size: cover;
+  background-position: center;
+  height: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: orange;
+
+  border: 5px solid black;
+}
