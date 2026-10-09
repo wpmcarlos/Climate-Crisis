@@ -2,6 +2,7 @@ https://cnr.ncsu.edu/news/2026/04/amazon-wildfires-causes-solutions/
 
 https://rainforestfoundation.org/engage/brazil-amazon-fires/
 
+https://currentwildfires.com/en/wildfires-amazon/
 
 Things they mentioned we should have
 ● Sticky navbar is required
