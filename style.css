@@ -1,55 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: white;
+}
+
 h1 {
   font-family: "Argent CF", Georgia, serif;
   font-size: 48px;
   font-weight: 100;
   text-align: center;
+
   background-color: beige;
   background-size: cover;
   background-position: center;
+
   height: 100px;
+  margin: 0;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
 
+  color: white;
   border: 5px solid black;
 }
-body {
-  background-color: white;
-}
 
-/*Mobile display*/
-.container {
+.navbar {
   display: flex;
-  flex-direction: column;
-}
+  justify-content: flex-end;
+  align-items: center;
 
-.nav-bar {
+  background-color: #173b2b;
   position: sticky;
+  top: 0;
+  z-index: 1000;
+  min-height: 65px;
 }
 
-a {
-  flex: 1;
-  text-decoration: outline;
-  outline-color: transparent;
-  text-align: center;
-  line-height: 3;
-  color: black;
+/* Desktop navigation links */
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-a:link,
-a:visited,
-a:focus {
-  background-color: none;
+/* Individual navigation links */
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  padding: 15px 20px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
 }
 
-a:hover {
-  background: transparent;
+.nav-links a:hover {
+  background-color: #2e6045;
+  color: white;
 }
-a:active {
+
+.nav-links a:active {
   background-color: darkred;
   color: white;
+}
+
+.nav-links a:focus-visible {
+  outline: 2px solid white;
+  outline-offset: -4px;
+}
+
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+}
+
+/* Visually hide checkbox */
+.menu-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
 }
 
 .hero {
@@ -65,17 +97,72 @@ a:active {
   font-family: "Argent CF", Georgia, serif;
   font-size: 40px;
   font-weight: 100;
+
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   width: 100%;
-  text-align:left
-  box-sizing: border-box;
-  margin-bottom: 0;
+
+  text-align: left;
+  margin: 0;
+  padding: 20px;
 }
 
-/*Desktop display*/
-@media (min-width: 768px) {
-  .container {
-    flex-direction: row;
+/* Mobile display */
+@media (max-width: 599px) {
+
+  h1 {
+      font-size: 32px;
+      height: 80px;
+  }
+
+  .navbar {
+      justify-content: flex-end;
+      flex-wrap: wrap;
+  }
+
+  /* Show hamburger */
+  .hamburger {
+      display: block;
+      color: white;
+      font-size: 30px;
+      padding: 10px 20px;
+      cursor: pointer;
+  }
+
+  /* Hide navigation links initially */
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+  }
+
+  /* Mobile navigation links */
+  .nav-links a {
+      flex: none;
+      text-align: center;
+      padding: 15px;
+      border-top: 1px solid #2e6045;
+  }
+
+  /* Show links when hamburger is clicked */
+  .menu-toggle:checked ~ .nav-links {
+      display: flex;
+  }
+
+  /* Hamburger keyboard focus */
+  .menu-toggle:focus-visible + .hamburger {
+      outline: 2px solid white;
+      outline-offset: -4px;
+  }
+
+  .hero {
+      min-height: 70vh;
+      background-position: center;
+  }
+
+  .hero p {
+      font-size: 28px;
+      padding: 15px;
   }
 }
