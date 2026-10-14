@@ -8,24 +8,23 @@ body {
 }
 
 h1 {
-  font-family: "Argent CF", Georgia, serif;
-  font-size: 48px;
-  font-weight: 100;
+  font-family: "Amatic SC", cursive;
+  font-size: 64px;
+  font-weight: 700;
   text-align: center;
 
-  background-color: beige;
-  background-size: cover;
-  background-position: center;
+  background-color: #f1ebd8;
+  color: #173b2b;
 
-  height: 100px;
+  min-height: 110px;
   margin: 0;
+  padding: 15px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  color: white;
-  border: 5px solid black;
+  border-bottom: 3px solid #b68a4d;
 }
 
 .navbar {
@@ -111,8 +110,9 @@ h1 {
 @media (max-width: 599px) {
 
   h1 {
-      font-size: 32px;
-      height: 80px;
+      font-size: 46px;
+      min-height: 85px;
+      padding: 10px;
   }
 
   .navbar {
