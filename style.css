@@ -110,7 +110,13 @@ h1 {
   padding: 40px 20px;
   max-width: 900px;
   margin: 0 auto;
+  border-bottom: 1px soldi #d6d6d6;
 }
+
+/* gets rid of the bottom border for the last section */
+ .content-section:last-child {
+   border-bottom: none;
+ }
 
 .content-section h2 {
   font-size: 28px;
