@@ -107,7 +107,7 @@ h1 {
 }
 
 .content-section {
-  padding: 40px 20px;
+  padding: 30px 20px;
   max-width: 900px;
   margin: 0 auto;
   border-bottom: 2px solid #b68a4d;
@@ -127,7 +127,12 @@ h1 {
 .content-section p {
   font-size: 18px;
   line-height: 1.6;
-  margin-bottom:20px;
+  margin-bottom: 10px;
+}
+
+/*changes nackground color for these sections*/
+.content-section.alt-background {
+    background-color: #f1ebd8;
 }
 
 
