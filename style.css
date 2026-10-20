@@ -118,6 +118,11 @@ h1 {
   color: #245c3b;
 }
 
+.content-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom:20px;
+}
 
 
 /* Mobile display */
