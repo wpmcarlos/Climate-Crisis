@@ -7,18 +7,18 @@ body {
   background-color: white;
 }
 
+/* Mobile  */
+
 h1 {
   font-family: "Amatic SC", cursive;
-  font-size: 64px;
+  font-size: 46px;
   font-weight: 700;
   text-align: center;
-
   background-color: #f1ebd8;
   color: #173b2b;
-
-  min-height: 110px;
+  min-height: 85px;
   margin: 0;
-  padding: 15px;
+  padding: 10px;
 
   display: flex;
   justify-content: center;
@@ -27,10 +27,13 @@ h1 {
   border-bottom: 3px solid #b68a4d;
 }
 
+/* Mobile nav */
+
 .navbar {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  flex-wrap: wrap;
 
   background-color: #173b2b;
   position: sticky;
@@ -39,18 +42,41 @@ h1 {
   min-height: 65px;
 }
 
-/* Desktop navigation links */
-.nav-links {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+/* Hamburger menu */
+
+.hamburger {
+  display: block;
+  color: white;
+  font-size: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
-/* Individual navigation links */
+/* Visually hide checkbox */
+
+.menu-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+/* Mobile navigation links */
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
 .nav-links a {
+  flex: none;
   text-decoration: none;
   color: white;
-  padding: 15px 20px;
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #2e6045;
   font-family: Arial, sans-serif;
   font-size: 16px;
 }
@@ -70,145 +96,264 @@ h1 {
   outline-offset: -4px;
 }
 
-/* Hide hamburger on desktop */
-.hamburger {
-  display: none;
+/* Show navigation when hamburger is clicked */
+
+.menu-toggle:checked ~ .nav-links {
+  display: flex;
 }
 
-/* Visually hide checkbox */
-.menu-toggle {
-  position: absolute;
-  opacity: 0;
-  width: 1px;
-  height: 1px;
+.menu-toggle:focus-visible + .hamburger {
+  outline: 2px solid white;
+  outline-offset: -4px;
 }
+
+/* Hero section */
 
 .hero {
-  min-height: 85vh;
+  height: 300px;
+  min-height: 0;
   background-image: url("amazon-fire-1920x1080.jpg");
   background-size: cover;
-  background-position: center;
-  position: relative;
+  background-position: center 60%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
 }
 
-.hero p {
-  color: white;
-  font-family: "Argent CF", Georgia, serif;
-  font-size: 40px;
-  font-weight: 100;
+.hero-content {
+  width: fit-content;
+  max-width: 90%;
+  background-color: rgba(10, 30, 20, 0.85);
+  border-left: 3px solid #c88a51;
+  padding: 10px 12px;
+}
 
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+.hero-label {
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #d7ac74;
+  margin: 0 0 5px;
+}
 
-  text-align: left;
+.hero-content h2 {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #f2e8d5;
   margin: 0;
-  padding: 20px;
 }
+
+.hero-line {
+  width: 250px;
+  height: 2px;
+  background-color: #c88a51;
+  margin: 8px 0;
+}
+
+.hero-subtitle {
+  font-family: Georgia, serif;
+  font-size: 12px;
+  color: #f2e8d5;
+  margin: 0;
+}
+
+/* Content sections */
 
 .content-section {
-  padding: 30px 20px;
+  padding: 25px 15px;
   max-width: 900px;
   margin: 0 auto;
   border-bottom: 2px solid #b68a4d;
 }
 
-/* gets rid of the bottom border for the last section */
- .content-section:last-child {
-   border-bottom: none;
- }
+.content-section:last-child {
+  border-bottom: none;
+}
+
+/* Research journal section */
 
 .content-section h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-  color: #245c3b;
+  font-family: Georgia, serif;
+  font-size: 22px;
+  color: #34392d;
+  background-color: #e4d7b9;
+
+  margin: 0;
+  padding: 24px 24px 16px;
+
+  border: 1px solid #988465;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  box-shadow: 4px 5px 0 #c7b996;
 }
 
 .content-section p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 10px;
+  font-family: Georgia, serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #34392d;
+
+  background-color: #faf6ea;
+  padding: 0 24px 24px;
+  margin: 0;
+
+  border: 1px solid #988465;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 4px 5px 0 #c7b996;
 }
 
-/*changes nackground color for these sections*/
 .content-section.alt-background {
-    background-color: #f1ebd8;
+  background-color: #f1ebd8;
 }
 
+.content-section:nth-of-type(2) h2,
+.content-section:nth-of-type(4) h2,
+.content-section:nth-of-type(6) h2 {
+  color: #173b2b;
+  background-color: #eef2ed;
+  box-shadow: 4px 5px 0 #d3d3d3;
+}
 
-/* Mobile display */
-@media (max-width: 599px) {
+.content-section:nth-of-type(2) p,
+.content-section:nth-of-type(4) p,
+.content-section:nth-of-type(6) p {
+  background-color: #ffffff;
+  box-shadow: 4px 5px 0 #d3d3d3;
+}
 
+/* Desktop */
+
+@media (min-width: 768px) {
   h1 {
-      font-size: 46px;
-      min-height: 85px;
-      padding: 10px;
+    font-size: 64px;
+    min-height: 110px;
+    padding: 15px;
   }
 
   .navbar {
-      justify-content: flex-end;
-      flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
 
-  /* Show hamburger */
+  /* Hide hamburger on desktop */
+
   .hamburger {
-      display: block;
-      color: white;
-      font-size: 30px;
-      padding: 10px 20px;
-      cursor: pointer;
+    display: none;
   }
 
-  /* Hide navigation links initially */
+  /* Show desktop navigation links */
+
   .nav-links {
-      display: none;
-      flex-direction: column;
-      align-items: stretch;
-      width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: auto;
   }
 
-  /* Mobile navigation links */
   .nav-links a {
-      flex: none;
-      text-align: center;
-      padding: 15px;
-      border-top: 1px solid #2e6045;
+    padding: 15px 20px;
+    border-top: none;
+    text-align: left;
   }
 
-  /* Show links when hamburger is clicked */
-  .menu-toggle:checked ~ .nav-links {
-      display: flex;
-  }
+  /* Desktop hero */
 
-  /* Hamburger keyboard focus */
-  .menu-toggle:focus-visible + .hamburger {
-      outline: 2px solid white;
-      outline-offset: -4px;
-  }
-
-  .hero {
-      min-height: 70vh;
+  @media (min-width: 768px) {
+    .hero {
+      height: 600px;
+      min-height: 0;
       background-position: center;
+      padding: 20px 30px;
+    }
+
+    .hero-content {
+      width: 750px;
+      max-width: 90%;
+      padding: 8px 20px;
+      background-color: rgba(10, 30, 20, 0.85);
+      border-left: 4px solid #c88a51;
+    }
+
+    .hero-label {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #d7ac74;
+      margin: 0 0 6px;
+    }
+
+    .hero-content h2 {
+      font-family: Georgia, serif;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.1;
+      color: #f2e8d5;
+      margin: 0;
+    }
+
+    .hero-line {
+      width: 370px;
+      height: 2px;
+      background-color: #c88a51;
+      margin: 8px 0;
+    }
+
+    .hero-subtitle {
+      font-family: Georgia, serif;
+      font-size: 16px;
+      color: #f2e8d5;
+      margin: 0;
+    }
   }
 
-  .hero p {
-      font-size: 28px;
-      padding: 15px;
-  }
-
+  /* Desktop content */
   .content-section {
-    padding: 25px 15px;
+    width: 100%;
+    max-width: 900px;
+    padding: 15px 0;
+    margin: 0 auto;
+    background-color: transparent;
+    border-bottom: none;
+  }
+
+  .content-section:nth-of-type(2),
+  .content-section:nth-of-type(3),
+  .content-section:nth-of-type(4),
+  .content-section:nth-of-type(5),
+  .content-section:nth-of-type(6) {
+    background-color: transparent;
+  }
+
+  .content-section h2,
+  .content-section p {
+    width: 100%;
+    box-shadow: none;
   }
 
   .content-section h2 {
-    font-size: 24px;
-   }
-
-  .content-section p {
-    font-size: 16px;
+    border-bottom: none;
   }
 
+  .content-section p {
+    border-top: none;
+    box-shadow: 4px 5px 0 #c7b996;
+  }
 
-
-  
+  .content-section:nth-of-type(2) p,
+  .content-section:nth-of-type(4) p,
+  .content-section:nth-of-type(6) p {
+    box-shadow: 4px 5px 0 #d3d3d3;
+  }
+  .content-section:nth-of-type(3) h2,
+  .content-section:nth-of-type(5) h2 {
+    box-shadow: 4px 5px 0 #c7b996;
+  }
 }
