@@ -192,6 +192,33 @@ h1 {
   box-shadow: 4px 5px 0 #c7b996;
 }
 
+/* Add an icon before each section heading */
+
+.content-section h2::before {
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+#about h2::before {
+  content: "🌿";
+}
+
+#drought h2::before {
+  content: "💧";
+}
+
+#wildfires h2::before {
+  content: "🔥";
+}
+
+#deforestation h2::before {
+  content: "🌳";
+}
+
+#future h2::before {
+  content: "♻️";
+}
+
 .content-section p {
   font-family: Georgia, serif;
   font-size: 16px;
